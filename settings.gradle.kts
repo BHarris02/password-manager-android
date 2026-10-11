@@ -26,3 +26,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Password Manager"
 include(":app")
+include(":core:database")
+include(":core:data")
+include(":core:model")

@@ -1,0 +1,27 @@
+plugins {
+    id("passwordmanager.android.library")
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
+}
+
+android {
+    namespace = "dev.blakeharris.database"
+}
+
+dependencies {
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.material)
+
+    // hilt
+    implementation("com.google.dagger:hilt-android:2.60.1")
+    ksp("com.google.dagger:hilt-android-compiler:2.60.1")
+
+    // room
+    implementation("androidx.room3:room3-runtime:3.0.3")
+    ksp("androidx.room3:room3-compiler:3.0.3")
+
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.junit)
+}
